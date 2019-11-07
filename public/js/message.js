@@ -39,7 +39,7 @@ window.onload = function() {
       });
 
       // Set up our request
-      XHR.open("POST", "http://localhost:5000/message")
+      XHR.open("POST", "http://county-sports.herokuapp.com/message")
 
       // XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
       // The data sent is what the user provided in the form
