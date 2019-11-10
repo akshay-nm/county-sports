@@ -8,6 +8,13 @@ const helmet = require('helmet')
 const db = require('./lib/db')
 const helpers = require('./lib/helpers')
 
+function enforceHttps(req, res, next) {
+  if(!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
+    return res.redirect('https://' + req.get('host') + req.url)
+  }
+  next()
+}
+
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -17,12 +24,7 @@ app.set('view engine', 'ejs')
 
 app.use(helmet())
 
-app.use(function(req, res, next) {
-  if(!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
-    return res.redirect('https://' + req.get('host') + req.url)
-  }
-  next()
-})
+app.use(enforceHttps)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
