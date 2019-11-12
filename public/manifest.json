@@ -1,0 +1,16 @@
+{
+  "name": "CountySports",
+  "short_name": "CS",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1E1B1A",
+  "description": "A demo app for a fictional conference",
+  "theme_color": "#1E1B1A",
+  "icons": [
+    {
+      "src": "./icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

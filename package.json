@@ -19,6 +19,7 @@
     "node-mailjet": "^3.3.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "purify-css": "^1.2.5"
   }
 }
