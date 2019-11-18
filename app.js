@@ -24,7 +24,7 @@ app.set('view engine', 'ejs')
 
 app.use(helmet())
 
-//app.use(enforceHttps)
+app.use(enforceHttps)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
